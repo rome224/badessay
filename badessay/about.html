@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — BadEssay</title>
+<meta name="description" content="A college essay studio founded on one rule: real writers, real coaching, and no AI — ever.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0b0d0c;--slate:#4b5363;--muted:#6b7280;--line:#e5e7eb;--card:#ffffff;
+  --bg:#f3f4f6;--green:#0a94a6;--green-dk:#077786;--green-tint:#e2f6f8;--lav:#8b7ad6;--lav-dk:#6f5cc6;--lav-tint:#efeafb;
+  --radius:20px;--radius-sm:14px;--shadow:0 4px 24px rgba(0,0,0,.05);--maxw:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Manrope",system-ui,sans-serif;background:var(--bg);color:var(--ink);
+  line-height:1.5;-webkit-font-smoothing:antialiased;zoom:1.2}
+h1,h2,h3,h4{letter-spacing:-.04em;line-height:1.15;font-weight:700}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 22px;border-radius:999px;
+  font-weight:600;font-size:15px;border:1px solid transparent;cursor:pointer;transition:.2s}
+.btn-primary{background:var(--green);color:#fff;border-color:var(--green-dk);
+  box-shadow:0 1px 2px rgba(0,0,0,.15), inset 0 1px 1px rgba(255,255,255,.25)}
+.btn-primary:hover{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+.btn-ghost:hover{background:var(--green);color:#fff;border-color:var(--green-dk)}
+.btn-outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.btn-outline-light:hover{background:#fff;color:var(--ink)}
+.btn .arrow{font-size:17px;line-height:1}
+
+/* Nav */
+header.nav{position:sticky;top:0;z-index:50;background:rgba(243,244,246,.85);backdrop-filter:blur(12px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--maxw);margin:0 auto}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.03em}
+.logo .dot{width:26px;height:26px;border-radius:8px;background:var(--green);display:grid;place-items:center;color:#fff;font-size:15px}
+nav.links{display:flex;gap:28px;font-weight:600;font-size:15px;color:var(--slate)}
+nav.links a:hover,nav.links a.current{color:var(--green)}
+.nav-cta{display:flex;gap:12px;align-items:center}
+.menu-btn{display:none;background:#fff;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;font-size:20px;cursor:pointer}
+
+/* Section scaffolding */
+section{padding:0 14px}
+.mt{margin-top:14px}
+.panel{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);margin:0 auto;max-width:var(--maxw);padding:64px 48px}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#f9fafb;border:1px solid var(--line);
+  border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;color:var(--muted)}
+.eyebrow .ed{width:8px;height:8px;border-radius:50%;background:var(--lav)}
+h2.title{font-size:clamp(30px,4vw,48px)}
+.center{text-align:center;align-items:center;flex-direction:column}
+
+/* Home hero */
+.hero{padding:14px}
+.hero-card{position:relative;border-radius:var(--radius);overflow:hidden;min-height:560px;
+  max-width:var(--maxw);margin:0 auto;display:flex;align-items:flex-end;padding:48px;color:#fff;background-size:cover;background-position:center}
+.hero-card::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,0) 75%)}
+.hero-content{position:relative;max-width:600px;display:flex;flex-direction:column;gap:28px}
+.hero h1{font-size:clamp(38px,6vw,72px);line-height:1.05}
+.hero p.lede{font-size:18px;font-weight:400;max-width:480px;opacity:.95}
+.rating-pill{display:inline-flex;align-items:center;gap:14px;align-self:flex-start;
+  background:rgba(0,0,0,.25);backdrop-filter:blur(20px);border-radius:999px;padding:12px 20px 12px 12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.2)}
+.avatars{display:flex}
+.avatars span{width:38px;height:38px;border-radius:50%;border:2px solid #fff;margin-left:-12px;background-size:cover;background-position:center;background:#777}
+.avatars span:first-child{margin-left:0}
+.rating-meta .score{font-weight:700;display:flex;align-items:center;gap:6px}
+.rating-meta .stars{color:#ffd23f;letter-spacing:1px}
+.rating-meta .sub{font-size:13px;opacity:.75}
+
+/* Home intro + benefits */
+.intro-top{display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:start}
+.stat{display:flex;flex-direction:column;gap:6px}
+.stat .big{font-size:40px;font-weight:700;letter-spacing:-.04em}
+.stat .lbl{color:var(--muted);font-size:15px}
+.intro-lead{font-size:clamp(22px,2.6vw,32px);font-weight:600;letter-spacing:-.03em}
+.intro-lead b{color:var(--green)}
+.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:56px}
+.benefit .ico{width:54px;height:54px;border-radius:16px;background:var(--lav-tint);
+  display:grid;place-items:center;font-size:24px;border:3px solid #fff;box-shadow:0 2px 2px rgba(139,122,214,.2);margin-bottom:16px}
+.benefit h4{font-size:20px;letter-spacing:-.03em;margin-bottom:6px}
+.benefit p{color:var(--muted);font-size:15px}
+
+/* Home clinic + offer */
+.duo{display:grid;grid-template-columns:1.4fr 1fr;gap:14px;max-width:var(--maxw);margin:14px auto 0}
+.clinic{position:relative;border-radius:var(--radius);overflow:hidden;min-height:400px;padding:32px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;background-size:cover;background-position:center}
+.clinic::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.7),rgba(0,0,0,0) 60%)}
+.clinic .cc{position:relative}
+.clinic h3{font-size:30px}
+.clinic p{opacity:.9;margin-top:6px}
+.offer{background:var(--lav);border-radius:var(--radius);padding:32px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;min-height:400px}
+.offer .gift{font-size:40px}
+.offer h3{font-size:30px;margin-top:auto}
+.offer p{opacity:.85;margin-top:10px}
+
+/* Services grid */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.service{display:flex;gap:24px;border:1px solid #f3f4f6;border-radius:var(--radius);background:#fff;
+  box-shadow:0 4px 14px rgba(0,0,0,.03);overflow:hidden;transition:.2s}
+.service:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.07)}
+.service img{width:180px;flex:none;object-fit:cover;align-self:stretch}
+.service .body{padding:30px 30px 30px 0;display:flex;flex-direction:column}
+.service h4{font-size:22px;margin-bottom:8px}
+.service p{color:var(--slate);font-size:15px;margin-bottom:16px}
+.service .more{margin-top:auto;color:var(--green);font-weight:600;font-size:15px;display:inline-flex;gap:6px;align-items:center}
+
+/* Home testimonial band */
+.testi{background:var(--green);color:#fff;border-radius:var(--radius);max-width:var(--maxw);margin:0 auto;
+  padding:48px;display:grid;grid-template-columns:.8fr 1.5fr;gap:48px;align-items:center}
+.testi-photo{border-radius:16px;overflow:hidden;position:relative;min-height:340px;background-size:cover;background-position:center 25%;background:#557}
+.testi-photo .badge{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);
+  background:rgba(0,0,0,.3);backdrop-filter:blur(6px);border-radius:999px;padding:10px 16px;font-size:14px;font-weight:600;white-space:nowrap}
+.testi .stars{color:#ffd23f;font-size:18px;letter-spacing:2px;margin-bottom:20px}
+.testi blockquote{font-size:clamp(22px,2.4vw,30px);font-weight:600;letter-spacing:-.03em;line-height:1.3}
+.testi .mini{margin-top:24px;font-weight:400;opacity:.92}
+.testi .tags{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
+.testi .tags span{background:rgba(255,255,255,.15);border-radius:999px;padding:6px 12px;font-size:14px}
+
+/* Team */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.member .ph{border-radius:16px;overflow:hidden;aspect-ratio:3/4;background:#ddd}
+.member .ph img{width:100%;height:100%;object-fit:cover;transition:.4s}
+.member:hover .ph img{transform:scale(1.04)}
+.member .meta{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:16px 4px 0}
+.member h4{font-size:22px}
+.member .role{color:var(--muted);font-size:15px;margin-top:4px}
+.member .go{width:42px;height:42px;border:1px solid var(--line);border-radius:50%;flex:none;display:grid;place-items:center;color:var(--muted);transition:.2s}
+.member:hover .go{background:var(--green);color:#fff;border-color:var(--green)}
+
+/* Services page hero */
+.page-hero{padding:14px}
+.page-hero-card{position:relative;border-radius:var(--radius);overflow:hidden;min-height:420px;max-width:var(--maxw);margin:0 auto;
+  display:flex;align-items:center;padding:48px;color:#fff;background-size:cover;background-position:center}
+.page-hero-card::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.15) 80%)}
+.page-hero-content{position:relative;max-width:640px;display:flex;flex-direction:column;gap:24px}
+.eyebrow-dark{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
+  background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600}
+.eyebrow-dark .ed{width:8px;height:8px;border-radius:50%;background:#d9ccff}
+.page-hero h1{font-size:clamp(36px,5.5vw,64px);line-height:1.05}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Case studies (services page) */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.case{background:#fff;border:1px solid #f3f4f6;border-radius:var(--radius);box-shadow:0 4px 14px rgba(0,0,0,.03);
+  padding:28px;display:flex;flex-direction:column;gap:18px}
+.case .stars{color:#caa93f;letter-spacing:2px}
+.case blockquote{font-size:17px;font-weight:500;line-height:1.45}
+.case .who{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:8px;border-top:1px solid var(--line)}
+.case .who b{font-weight:700}
+.case .tag{background:var(--lav-tint);color:var(--lav-dk);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600}
+
+/* Detail page */
+.crumb{max-width:var(--maxw);margin:18px auto 0;padding:0 14px;color:var(--muted);font-size:14px;font-weight:600}
+.crumb a:hover{color:var(--green)}
+.detail-hero{padding:14px;padding-top:10px}
+.detail-hero-card{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:0;
+  background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.detail-hero-text{padding:48px;display:flex;flex-direction:column;gap:20px;justify-content:center}
+.detail-hero-text .eyebrow{align-self:flex-start}
+.detail-hero-text h1{font-size:clamp(34px,4.6vw,56px)}
+.detail-hero-text p.lede{color:var(--slate);font-size:17px;max-width:460px}
+.detail-hero-img{background:#cdd;background-size:cover;background-position:center;min-height:420px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden;margin-top:8px}
+.facts div{background:#fff;padding:16px 18px}
+.facts .k{color:var(--muted);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.facts .v{font-weight:700;font-size:17px;margin-top:4px}
+.anchors{max-width:var(--maxw);margin:14px auto 0;padding:0 14px;display:flex;gap:10px;flex-wrap:wrap}
+.anchors a{background:#fff;border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-weight:600;font-size:15px;color:var(--slate);transition:.2s}
+.anchors a:hover{background:var(--green);color:#fff;border-color:var(--green-dk)}
+.lead-copy{color:var(--slate);font-size:17px;max-width:760px}
+.sub-h{font-size:21px;font-weight:700;letter-spacing:-.03em;margin-top:36px}
+ul.ticks{list-style:none;margin-top:24px;display:grid;gap:14px;max-width:820px}
+ul.ticks li{display:flex;gap:12px;align-items:flex-start;font-size:16px}
+ul.ticks li::before{content:"\2713";color:var(--green);font-weight:700;flex:none;
+  width:26px;height:26px;border-radius:50%;background:var(--green-tint);display:grid;place-items:center;font-size:14px}
+.note{margin-top:24px;color:var(--muted);font-size:14px;font-style:italic}
+.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.step{background:#f9fafb;border:1px solid var(--line);border-radius:var(--radius-sm);padding:28px}
+.step .num{width:40px;height:40px;border-radius:50%;background:var(--lav);color:#fff;display:grid;place-items:center;font-weight:700;margin-bottom:16px}
+.step h4{font-size:18px;margin-bottom:8px}
+.step p{color:var(--muted);font-size:15px}
+.price-table{border:1px solid var(--line);border-radius:var(--radius-sm);overflow:hidden}
+.price-row{display:flex;justify-content:space-between;gap:24px;padding:18px 24px;border-bottom:1px solid var(--line);align-items:center}
+.price-row:last-child{border-bottom:none}
+.price-row:nth-child(odd){background:#f9fafb}
+.price-row .desc{font-size:16px}
+.price-row .amt{font-weight:700;font-size:17px;white-space:nowrap}
+.faq{display:grid;gap:12px;max-width:860px}
+details{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:20px 24px}
+details summary{font-weight:700;font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";color:var(--green);font-size:24px;font-weight:600;line-height:1}
+details[open] summary::after{content:"\2013"}
+details p{margin-top:14px;color:var(--slate);font-size:16px}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.tcard{background:#f9fafb;border:1px solid var(--line);border-radius:var(--radius-sm);padding:26px;display:flex;flex-direction:column;gap:16px}
+.tcard .stars{color:#caa93f;letter-spacing:2px}
+.tcard blockquote{font-size:16px;font-weight:500;line-height:1.45}
+.tcard .who{margin-top:auto;display:flex;justify-content:space-between;gap:12px;padding-top:8px;border-top:1px solid var(--line)}
+.tcard .who b{font-weight:700}
+.tcard .who span{color:var(--muted);font-size:14px}
+
+/* CTA band */
+.cta{background:var(--green);color:#fff;border-radius:var(--radius);max-width:var(--maxw);margin:0 auto;
+  padding:56px 48px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cta h2{font-size:clamp(26px,3.4vw,40px);max-width:620px;margin:0}
+
+/* Footer */
+footer.site{margin:14px;background:#fff;border-radius:var(--radius);padding:48px;box-shadow:var(--shadow)}
+.foot-inner{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.foot-col h5{font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:14px}
+.foot-col a{display:block;color:var(--slate);font-size:15px;padding:6px 0}
+.foot-col a:hover{color:var(--green)}
+.foot-bottom{max-width:var(--maxw);margin:32px auto 0;padding-top:24px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;color:var(--muted);font-size:14px;flex-wrap:wrap;gap:10px}
+
+@media(max-width:900px){
+  nav.links,.nav-cta .btn-ghost{display:none}
+  .menu-btn{display:block}
+  .panel{padding:48px 24px}
+  .intro-top{grid-template-columns:1fr;gap:32px}
+  .benefits,.services-grid,.team-grid,.cases,.steps,.testi-grid{grid-template-columns:1fr}
+  .duo,.testi{grid-template-columns:1fr}
+  .hero-card,.page-hero-card{padding:28px}
+  .service img{width:120px}
+  .detail-hero-card{grid-template-columns:1fr}
+  .detail-hero-img{min-height:280px;order:-1}
+  .price-row{flex-direction:column;align-items:flex-start;gap:6px}
+  .cta{padding:40px 24px}
+}
+
+</style>
+</head>
+<body><header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="index.html"><span class="dot">B</span> BadEssay</a>
+    <nav class="links">
+      <a href="services.html">Services</a>
+      <a href="team.html">Our Writers</a>
+      <a href="about.html" class="current">About Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Book a Free Call <span class="arrow">&rarr;</span></a>
+      <button class="menu-btn" aria-label="Menu" onclick="var l=document.querySelector('nav.links');l.style.display=(l.style.display==='flex')?'none':'flex';l.style.position='absolute';l.style.flexDirection='column';l.style.background='#fff';l.style.padding='16px 24px';l.style.right='16px';l.style.top='64px';l.style.borderRadius='14px';l.style.boxShadow='0 8px 24px rgba(0,0,0,.12)';">&#9776;</button>
+    </div>
+  </div>
+</header>
+<section class="page-hero">
+  <div class="page-hero-card" style="background-image:url('https://images.unsplash.com/photo-1529390079861-591de354faf5?q=75&w=1600&auto=format&fit=crop');background-color:#333">
+    <div class="page-hero-content">
+      <div class="eyebrow-dark"><span class="ed"></span> Orange County, CA &middot; Nationwide over Zoom</div>
+      <h1>The Studio Built on One Rule: No AI. Ever.</h1>
+      <div class="cta-row">
+        <a href="contact.html" class="btn btn-primary">Book a Free Call <span class="arrow">&rarr;</span></a>
+        <a href="team.html" class="btn btn-outline-light">Meet Our Writers</a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mt">
+  <div class="panel">
+    <div class="intro-top">
+      <div class="stat"><div class="big">100%</div><div class="lbl">Written by the student</div></div>
+      <p class="intro-lead"><b>Admissions officers now read thousands of essays that sound exactly the same.</b> Half were pasted out of a chatbot; the rest were sanded down by one until nothing personal was left. The essay is the one part of the application that can&rsquo;t be bought, borrowed, or generated — that&rsquo;s exactly why it works.</p>
+    </div>
+    <div class="benefits">
+      <div class="benefit"><div class="ico">&#9997;&#65039;</div><h4>Working writers only</h4><p>Every coach on the roster earns a living with words — journalists, essayists, former admissions readers.</p></div>
+      <div class="benefit"><div class="ico">&#128221;</div><h4>Editing, never ghostwriting</h4><p>Colleges require the essay to be the student&rsquo;s own work. Ours always is — we coach and edit the way magazines edit authors.</p></div>
+      <div class="benefit"><div class="ico">&#127891;</div><h4>A skill they keep</h4><p>Students leave permanently better writers. The essay gets them in; the skill goes with them.</p></div>
+    </div>
+  </div>
+</section>
+<section class="mt">
+  <div class="panel">
+    <div class="eyebrow"><span class="ed"></span> The Handwritten Guarantee</div>
+    <h2 class="title" style="margin:16px 0 20px">What We Promise Every Family</h2>
+    <p class="lead-copy">These aren&rsquo;t marketing lines — they go in the contract you sign.</p>
+    <ul class="ticks">
+      <li>No AI touches your essay. Not for drafting, not for editing, not for &ldquo;ideas.&rdquo; Every note comes from your writer&rsquo;s own head and hand.</li>
+      <li>The student writes every word. We will never submit, suggest, or supply a sentence written by anyone else.</li>
+      <li>One dedicated writer, start to submit. No handoffs, no rotating tutors, no dashboards.</li>
+      <li>Unlimited revision rounds. The essay ships when it&rsquo;s right, not when a meter runs out.</li>
+      <li>Deadlines guaranteed in writing — or we tell you before we start that the timeline can&rsquo;t be done properly, and we turn the project down.</li>
+    </ul>
+  </div>
+</section>
+<div class="duo">
+  <div class="clinic" style="background-image:url('https://images.unsplash.com/photo-1494883759339-0b042055a4ee?q=75&w=1000&auto=format&fit=crop')">
+    <div class="cc"><h3>Parents Stay in the Loop</h3><p>You&rsquo;re on the first call and the wrap-up call, with progress notes in between. The drafting stays between the student and their writer — that&rsquo;s where the honest material comes from.</p></div>
+  </div>
+  <div class="offer">
+    <div class="gift">&#128222;</div>
+    <h3>Talk to us before you decide anything</h3>
+    <p>The free call ends with a plan and a deadline map, whether or not you hire us. No pitch, no pressure.</p>
+  </div>
+</div>
+<section class="mt">
+  <div class="cta">
+    <h2>650 words decide more than you think. Make every one of them theirs.</h2>
+    <a href="contact.html" class="btn btn-outline-light">Book a Free Call <span class="arrow">&rarr;</span></a>
+  </div>
+</section>
+<footer class="site" id="contact">
+  <div class="foot-inner">
+    <div class="foot-col" style="max-width:280px">
+      <a class="logo" href="index.html" style="margin-bottom:14px"><span class="dot">B</span> BadEssay</a>
+      <p style="color:var(--muted);font-size:15px">A college essay studio. Real writers, one-on-one coaching, and every word written by the student. No AI, ever.</p>
+    </div>
+    <div class="foot-col">
+      <h5>Services</h5>
+      <a href="personal-statement.html">The Personal Statement</a>
+      <a href="supplemental-essays.html">Supplemental Essays</a>
+      <a href="uc-essays.html">UC Personal Insight Questions</a>
+      <a href="scholarship-essays.html">Scholarship Essays</a>
+    </div>
+    <div class="foot-col">
+      <h5>Studio</h5>
+      <a href="team.html">Our Writers</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Book a Free Call</a>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <a href="mailto:hello@badessay.com">hello@badessay.com</a>
+      <a href="#">Orange County, CA &middot; Nationwide over Zoom</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 BadEssay. All rights reserved. Students write every word of their own essays.</span>
+    <span>Privacy &middot; Terms</span>
+  </div>
+</footer>
+</body>
+</html>
