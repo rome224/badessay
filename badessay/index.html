@@ -11,7 +11,7 @@
 <style>
 :root{
   --ink:#0b0d0c;--slate:#4b5363;--muted:#6b7280;--line:#e5e7eb;--card:#ffffff;
-  --bg:#f3f4f6;--green:#0a94a6;--green-dk:#077786;--green-tint:#e2f6f8;--lav:#8b7ad6;--lav-dk:#6f5cc6;--lav-tint:#efeafb;
+  --bg:#3bcee3;--green:#0a94a6;--green-dk:#077786;--green-tint:#e2f6f8;--lav:#8b7ad6;--lav-dk:#6f5cc6;--lav-tint:#efeafb;
   --radius:20px;--radius-sm:14px;--shadow:0 4px 24px rgba(0,0,0,.05);--maxw:1200px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -35,14 +35,19 @@ img{display:block;max-width:100%}
 .btn .arrow{font-size:17px;line-height:1}
 
 /* Nav */
-header.nav{position:sticky;top:0;z-index:50;background:rgba(243,244,246,.85);backdrop-filter:blur(12px)}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(59,206,227,.85);backdrop-filter:blur(12px)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--maxw);margin:0 auto}
 .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.03em}
 .logo .dot{width:26px;height:26px;border-radius:8px;background:var(--green);display:grid;place-items:center;color:#fff;font-size:15px}
-nav.links{display:flex;gap:28px;font-weight:600;font-size:15px;color:var(--slate)}
-nav.links a:hover,nav.links a.current{color:var(--green)}
+nav.links{display:flex;gap:28px;font-weight:600;font-size:15px;color:#07363d}
+nav.links a:hover,nav.links a.current{color:#0b0d0c}
 .nav-cta{display:flex;gap:12px;align-items:center}
 .menu-btn{display:none;background:#fff;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;font-size:20px;cursor:pointer}
+/* Nav colors tuned for the turquoise page background */
+.nav-inner .logo .dot{background:#07363d}
+.nav-cta .btn-primary{background:#07363d;color:#fff;border-color:#07363d;
+  box-shadow:0 1px 2px rgba(0,0,0,.18), inset 0 1px 1px rgba(255,255,255,.18)}
+.nav-cta .btn-primary:hover{background:#fff;color:#07363d;border-color:#fff}
 
 /* Section scaffolding */
 section{padding:0 14px}
@@ -109,7 +114,7 @@ h2.title{font-size:clamp(30px,4vw,48px)}
 .service .more{margin-top:auto;color:var(--green);font-weight:600;font-size:15px;display:inline-flex;gap:6px;align-items:center}
 
 /* Home testimonial band */
-.testi{background:var(--green);color:#fff;border-radius:var(--radius);max-width:var(--maxw);margin:0 auto;
+.testi{background:var(--green-dk);color:#fff;border-radius:var(--radius);max-width:var(--maxw);margin:0 auto;
   padding:48px;display:grid;grid-template-columns:.8fr 1.5fr;gap:48px;align-items:center}
 .testi-photo{border-radius:16px;overflow:hidden;position:relative;min-height:340px;background-size:cover;background-position:center 25%;background:#557}
 .testi-photo .badge{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);
@@ -211,7 +216,7 @@ details p{margin-top:14px;color:var(--slate);font-size:16px}
 .cta h2{font-size:clamp(26px,3.4vw,40px);max-width:620px;margin:0}
 
 /* Footer */
-footer.site{margin:14px;background:#fff;border-radius:var(--radius);padding:48px;box-shadow:var(--shadow)}
+footer.site{width:calc(100% - 28px);max-width:var(--maxw);margin:14px auto;background:#fff;border-radius:var(--radius);padding:48px;box-shadow:var(--shadow)}
 .foot-inner{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
 .foot-col h5{font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin-bottom:14px}
 .foot-col a{display:block;color:var(--slate);font-size:15px;padding:6px 0}
