@@ -237,6 +237,20 @@ footer.site{margin:14px;background:#fff;border-radius:var(--radius);padding:48px
   .cta{padding:40px 24px}
 }
 
+/* Contact hero photo. Desktop: shift right so her face clears the headline; the empty left edge fades into the card.
+   Phone/tablet: photo across the top with her face above the text (vw math accounts for body zoom:1.2) */
+@media(min-width:901px){
+  .page-hero-card{--px:190px;background-image:linear-gradient(90deg,#333 var(--px),rgba(51,51,51,0) calc(var(--px) + 150px)),url('contacthero2.webp') !important;
+    background-size:100% 100%,auto 100% !important;background-position:0 0,var(--px) center !important;background-repeat:no-repeat !important}
+}
+/* Smaller laptops: the headline wraps as "Book Your Free Strategy", so push the photo further right */
+@media(min-width:901px) and (max-width:1163px){
+  .page-hero-card{--px:calc(58.3vw - 262px)}
+}
+@media(max-width:900px){
+  .page-hero-card{padding-top:calc(35.2vw - 4px);background-size:250% auto !important;background-position:23% 0 !important;background-repeat:no-repeat !important}
+  .page-hero-card::before{background:linear-gradient(180deg,rgba(0,0,0,0) calc(32.8vw - 11px),rgba(0,0,0,.72) calc(32.8vw + 45px),rgba(0,0,0,1) calc(78vw - 56px))}
+}
 </style>
 </head>
 <body><header class="nav">
@@ -255,7 +269,7 @@ footer.site{margin:14px;background:#fff;border-radius:var(--radius);padding:48px
   </div>
 </header>
 <section class="page-hero">
-  <div class="page-hero-card" style="background-image:url('https://images.unsplash.com/photo-1529390079861-591de354faf5?q=75&w=1600&auto=format&fit=crop');background-color:#333">
+  <div class="page-hero-card" role="img" aria-label="A smiling BadEssay coach texting on her phone at a sunny cafe table with a laptop, notebook, and coffee" style="background-image:url('contacthero2.webp');background-color:#333">
     <div class="page-hero-content">
       <div class="eyebrow-dark"><span class="ed"></span> 15 minutes &middot; No pitch, just a plan</div>
       <h1>Book Your Free Strategy Call</h1>
@@ -282,7 +296,7 @@ footer.site{margin:14px;background:#fff;border-radius:var(--radius);padding:48px
   </div>
 </section>
 <div class="duo">
-  <div class="clinic" style="background-image:url('https://images.unsplash.com/photo-1529390079861-591de354faf5?q=75&w=1600&auto=format&fit=crop');background-color:#333">
+  <div class="clinic" role="img" aria-label="Sunset over a palm-lined Orange County beach and coastline" style="background-image:url('whereweworkimage.webp');background-color:#333">
     <div class="cc"><h3>Where We Work</h3><p>Based in Orange County, CA &middot; Students nationwide over Zoom &middot; hello@badessay.com</p></div>
   </div>
   <div class="offer">

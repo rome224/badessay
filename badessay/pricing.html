@@ -237,6 +237,11 @@ footer.site{margin:14px;background:#fff;border-radius:var(--radius);padding:48px
   .cta{padding:40px 24px}
 }
 
+/* Pricing hero, phone/tablet: crop to the image's centered "Invest in Your Story" text across the top, page text below it (vw math accounts for body zoom:1.2) */
+@media(max-width:900px){
+  .page-hero-card{padding-top:calc(56.25vw - 11px);background-size:300% auto !important;background-position:51% 0 !important;background-repeat:no-repeat !important}
+  .page-hero-card::before{background:linear-gradient(180deg,rgba(0,0,0,0) calc(56.25vw - 25px),rgba(0,0,0,.72) calc(56.25vw + 30px),rgba(0,0,0,1) calc(93.75vw - 61px))}
+}
 </style>
 </head>
 <body><header class="nav">
@@ -255,7 +260,7 @@ footer.site{margin:14px;background:#fff;border-radius:var(--radius);padding:48px
   </div>
 </header>
 <section class="page-hero">
-  <div class="page-hero-card" style="background-image:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=75&w=1600&auto=format&fit=crop');background-color:#222">
+  <div class="page-hero-card" role="img" aria-label="A sunlit study desk with a closed laptop, books, and a pink chair, with the words Invest in Your Story" style="background-image:url('pricinghero.webp');background-color:#222">
     <div class="page-hero-content">
       <div class="eyebrow-dark"><span class="ed"></span> Flat pricing &middot; Unlimited revision rounds</div>
       <h1>Pricing</h1>
