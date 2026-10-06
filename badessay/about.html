@@ -11,7 +11,7 @@
 <style>
 :root{
   --ink:#0b0d0c;--slate:#4b5363;--muted:#6b7280;--line:#e5e7eb;--card:#ffffff;
-  --bg:#f3f4f6;--green:#0a94a6;--green-dk:#077786;--green-tint:#e2f6f8;--lav:#8b7ad6;--lav-dk:#6f5cc6;--lav-tint:#efeafb;
+  --bg:#3bcee3;--green:#0a94a6;--green-dk:#077786;--green-tint:#e2f6f8;--lav:#8b7ad6;--lav-dk:#6f5cc6;--lav-tint:#efeafb;
   --radius:20px;--radius-sm:14px;--shadow:0 4px 24px rgba(0,0,0,.05);--maxw:1200px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -35,14 +35,18 @@ img{display:block;max-width:100%}
 .btn .arrow{font-size:17px;line-height:1}
 
 /* Nav */
-header.nav{position:sticky;top:0;z-index:50;background:rgba(243,244,246,.85);backdrop-filter:blur(12px)}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(59,206,227,.85);backdrop-filter:blur(12px)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px 24px;max-width:var(--maxw);margin:0 auto}
 .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:-.03em}
 .logo-mark{width:180px;height:auto;max-width:100%}
-nav.links{display:flex;gap:28px;font-weight:600;font-size:15px;color:var(--slate);white-space:nowrap}
-nav.links a:hover,nav.links a.current{color:var(--green)}
+nav.links{display:flex;gap:28px;font-weight:800;font-size:15px;color:#fff;white-space:nowrap}
+nav.links a:hover,nav.links a.current{color:#07363d}
 .nav-cta{display:flex;gap:12px;align-items:center;white-space:nowrap}
 .menu-btn{display:none;background:#fff;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;font-size:20px;cursor:pointer}
+/* Nav colors tuned for the turquoise page background */
+.nav-cta .btn-primary{background:#fff;color:#3bcee3;border-color:#fff;
+  box-shadow:0 1px 2px rgba(0,0,0,.18), inset 0 1px 1px rgba(255,255,255,.18)}
+.nav-cta .btn-primary:hover{background:#fff;color:#0a94a6;border-color:#fff}
 
 /* Section scaffolding */
 section{padding:0 14px}
@@ -237,6 +241,55 @@ footer.site{margin:14px;background:#fff;border-radius:var(--radius);padding:48px
   .cta{padding:40px 24px}
 }
 
+/* Phone/tablet: photo across the top of the hero card with the boy's face above the headline (vw math accounts for body zoom:1.2) */
+@media(max-width:900px){
+  .page-hero-card{padding-top:calc(46.7vw - 16px);background-size:140% auto !important;background-position:40% 0 !important;background-repeat:no-repeat !important}
+  .page-hero-card::before{background:linear-gradient(180deg,rgba(51,51,51,0) calc(36vw - 12px),rgba(51,51,51,.6) calc(56vw - 19px),#333 calc(77.8vw - 26px))}
+}
+/* Phone: taller "Parents Stay in the Loop" card so his head sits above the text */
+@media(max-width:600px){
+  .duo .clinic{min-height:520px !important}
+}
+/* Phone/tablet polish shared by every page (desktop untouched) */
+@media(max-width:900px){
+  .nav-cta{white-space:nowrap}
+  nav.links a{color:var(--ink)} /* the menu-button dropdown is white */
+  .duo{margin:14px 14px 0}
+  .crumb{color:#07363d}
+  .hero-content,.page-hero-content,.detail-hero-text{min-width:0;max-width:100%}
+  h1,h2,h3,h4,.btn{overflow-wrap:break-word}
+}
+/* Phone: one-line "Book a Free Call" pill, stacked service cards, type sized to fit (body zoom:1.2 scales every px value) */
+@media(max-width:600px){
+  .nav-inner{padding:10px 14px;gap:8px}
+  .logo-mark{width:96px}
+  .nav-cta{gap:6px}
+  .nav-cta .btn-primary{padding:8px 12px;font-size:12px;gap:5px;line-height:1.2}
+  .nav-cta .btn-primary .arrow{font-size:13px}
+  .menu-btn{width:36px;height:36px;font-size:17px;border-radius:9px}
+  .panel{padding:40px 18px}
+  .hero-card,.page-hero-card{padding-left:22px;padding-right:22px}
+  .detail-hero-text{padding:28px 20px}
+  .hero h1{font-size:31px}
+  .page-hero h1,.detail-hero-text h1{font-size:30px}
+  h2.title{font-size:27px}
+  .hero p.lede{font-size:16px}
+  .btn{white-space:normal}
+  .service{flex-direction:column;gap:0}
+  .service img{width:100%;height:170px;align-self:auto}
+  .service .body{padding:20px 20px 22px}
+  .service h4{font-size:20px}
+  .clinic,.offer{padding:24px;min-height:340px}
+  .testi{padding:28px 20px}
+  .testi-photo .badge{white-space:normal;text-align:center;max-width:calc(100% - 24px)}
+  .cta{padding:32px 20px}
+  footer.site{padding:32px 20px}
+  .price-row{padding:16px 18px}
+  details{padding:18px}
+  .facts{grid-template-columns:1fr}
+  .facts div{padding:14px}
+  .facts .v{font-size:16px;overflow-wrap:break-word}
+}
 </style>
 </head>
 <body><header class="nav">
