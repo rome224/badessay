@@ -135,8 +135,8 @@ h2.title{font-size:clamp(30px,4vw,48px)}
 .page-hero{padding:14px}
 .page-hero-card{position:relative;border-radius:var(--radius);overflow:hidden;min-height:420px;max-width:var(--maxw);margin:0 auto;
   display:flex;align-items:center;padding:48px;color:#fff;background-size:cover;background-position:center}
-.page-hero-card::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,.15) 80%)}
-.page-hero-content{position:relative;max-width:640px;display:flex;flex-direction:column;gap:24px}
+.page-hero-card::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.3) 0%,rgba(0,0,0,.08) 50%,rgba(0,0,0,0) 70%)}
+.page-hero-content{position:relative;max-width:640px;display:flex;flex-direction:column;gap:24px;text-shadow:0 2px 14px rgba(0,0,0,.45)}
 .eyebrow-dark{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;
   background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600}
 .eyebrow-dark .ed{width:8px;height:8px;border-radius:50%;background:#d9ccff}
@@ -249,7 +249,7 @@ footer.site{margin:14px;background:#fff;border-radius:var(--radius);padding:48px
 }
 @media(max-width:900px){
   .page-hero-card{padding-top:calc(35.2vw - 4px);background-size:250% auto !important;background-position:23% 0 !important;background-repeat:no-repeat !important}
-  .page-hero-card::before{background:linear-gradient(180deg,rgba(0,0,0,0) calc(32.8vw - 11px),rgba(0,0,0,.72) calc(32.8vw + 45px),rgba(0,0,0,1) calc(78vw - 56px))}
+  .page-hero-card::before{background:linear-gradient(180deg,rgba(51,51,51,0) calc(32.8vw - 11px),rgba(51,51,51,.55) calc(32.8vw + 45px),#333 calc(78vw - 56px))}
 }
 </style>
 </head>
