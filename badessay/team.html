@@ -236,6 +236,17 @@ footer.site{margin:14px;background:#fff;border-radius:var(--radius);padding:48px
   .price-row{flex-direction:column;align-items:flex-start;gap:6px}
   .cta{padding:40px 24px}
 }
+/* Desktop: scale the team photo down and pin it right so no face sits under the headline; edges fade into the card.
+   Sizes use vw because body has zoom:1.2 (--cw = card width). Wide screens: photo centered, left face just right of "Meet the People".
+   Smaller laptops: the headline wraps wider, so the photo is top-aligned with the faces above the headline instead */
+@media(min-width:901px){
+  .page-hero-card{--cw:min(calc(83.333vw - 28px),1200px);--tw:min(calc(125vw - 837px),1005px);--ty:center;
+    background-image:linear-gradient(to right,#222 0,rgba(34,34,34,0) 30%),linear-gradient(to bottom,#222 0,rgba(34,34,34,0) 12%,rgba(34,34,34,0) 86%,#222 100%),url('team.webp') !important;
+    background-size:var(--tw) calc(var(--tw) * .375) !important;background-position:calc(var(--cw) - .88 * var(--tw)) var(--ty) !important;background-repeat:no-repeat !important}
+}
+@media(min-width:901px) and (max-width:1309px){
+  .page-hero-card{--tw:min(calc(125vw - 582px),800px);--ty:0}
+}
 
 </style>
 </head>
@@ -255,7 +266,7 @@ footer.site{margin:14px;background:#fff;border-radius:var(--radius);padding:48px
   </div>
 </header>
 <section class="page-hero">
-  <div class="page-hero-card" role="img" aria-label="Three smiling members of the BadEssay team working together at a table with notebooks and books" style="background-image:url('team.png');background-color:#222;background-position:center 30%">
+  <div class="page-hero-card" role="img" aria-label="Three smiling members of the BadEssay team working together at a table with notebooks and books" style="background-image:url('team.webp');background-color:#222;background-position:center 30%">
     <div class="page-hero-content">
       <div class="eyebrow-dark"><span class="ed"></span> Real writers. Not tutors, not software.</div>
       <h1>Meet the People Behind the Red Pencil</h1>

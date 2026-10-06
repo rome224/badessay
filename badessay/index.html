@@ -240,6 +240,11 @@ footer.site{width:calc(100% - 28px);max-width:var(--maxw);margin:14px auto;backg
   .price-row{flex-direction:column;align-items:flex-start;gap:6px}
   .cta{padding:40px 24px}
 }
+/* Phone: shrink the home hero photo so both mom and daughter fit across the card; it sits at the bottom and the overlay goes solid at the photo top edge (stops account for body zoom:1.2) */
+@media(max-width:600px){
+  .hero-card{background-size:280% auto !important;background-position:left 89% bottom calc(240px - .77*(100vw - 34px)) !important;background-repeat:no-repeat !important}
+  .hero-card::before{background:linear-gradient(0deg,rgba(0,0,0,.4) 0,rgba(0,0,0,.35) calc(.397*100vw + 60px),rgba(0,0,0,.97) calc(.397*100vw + 227px))}
+}
 
 </style>
 </head>
@@ -259,7 +264,7 @@ footer.site{width:calc(100% - 28px);max-width:var(--maxw);margin:14px auto;backg
   </div>
 </header>
 <section class="hero">
-  <div class="hero-card" role="img" aria-label="A smiling BadEssay coach and a high school student reviewing an essay together on a laptop in a library" style="background-image:url('homehero.png');background-color:#222;background-position:85% 30%">
+  <div class="hero-card" role="img" aria-label="A smiling BadEssay coach and a high school student reviewing an essay together on a laptop in a library" style="background-image:url('homehero.webp');background-color:#222;background-position:85% 30%">
     <div class="hero-content">
       <h1>College Essays Are Due Soon… Is Your Student Ready to Submit?</h1>
       <p class="lede">Did you know the essays are the KEY PIECE to getting your student into a good college? And AI is not allowed.</p>
@@ -289,7 +294,7 @@ footer.site{width:calc(100% - 28px);max-width:var(--maxw);margin:14px auto;backg
   </div>
 </section>
 <div class="duo">
-  <div class="clinic" role="img" aria-label="A smiling student in glasses working on his essay on a laptop at a cafe" style="background-image:url('meetusanywhere.png');background-color:#333;background-position:72% 30%">
+  <div class="clinic" role="img" aria-label="A smiling student in glasses working on his essay on a laptop at a cafe" style="background-image:url('meetusanywhere.webp');background-color:#333;background-position:72% 30%">
     <div class="cc"><h3>Meet Us Anywhere</h3><p>We are based in Orange County, CA and can meet in person for locals, but serve students nationwide via FaceTime, Zoom, or Teams.</p></div>
   </div>
   <div class="offer">
@@ -341,7 +346,7 @@ footer.site{width:calc(100% - 28px);max-width:var(--maxw);margin:14px auto;backg
 </section>
 <section class="mt">
   <div class="testi">
-    <div class="testi-photo" role="img" aria-label="A smiling Class of 2026 family: father, daughter, and mother sitting together on a couch" style="background-image:url('classof2026.png');background-color:#557;background-size:cover;background-position:center 25%">
+    <div class="testi-photo" role="img" aria-label="A smiling Class of 2026 family: father, daughter, and mother sitting together on a couch" style="background-image:url('classof2026.webp');background-color:#557;background-size:cover;background-position:center 25%">
       <div class="badge">&#9733; Class of 2026 Family</div>
     </div>
     <div>
