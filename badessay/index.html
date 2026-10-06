@@ -63,10 +63,12 @@ h2.title{font-size:clamp(30px,4vw,48px)}
 .hero{padding:14px}
 .hero-card{position:relative;border-radius:var(--radius);overflow:hidden;min-height:560px;
   max-width:var(--maxw);margin:0 auto;display:flex;align-items:flex-end;padding:48px;color:#fff;background-size:cover;background-position:center}
-.hero-card::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.65) 35%,rgba(0,0,0,0) 70%)}
+.hero-card::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.6) 0%,rgba(0,0,0,.38) 34%,rgba(0,0,0,0) 58%)}
 .hero-content{position:relative;max-width:600px;display:flex;flex-direction:column;gap:28px}
 .hero h1{font-size:clamp(38px,6vw,72px);line-height:1.05}
 .hero p.lede{font-size:18px;font-weight:400;max-width:480px;opacity:.95}
+.hero h1,.hero p.lede{text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.hero .btn-primary{padding:10px 18px;font-size:14px}
 .rating-pill{display:inline-flex;align-items:center;gap:14px;align-self:flex-start;
   background:rgba(0,0,0,.25);backdrop-filter:blur(20px);border-radius:999px;padding:12px 20px 12px 12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.2)}
 .avatars{display:flex}
@@ -96,8 +98,8 @@ h2.title{font-size:clamp(30px,4vw,48px)}
 .clinic .cc{position:relative}
 .clinic h3{font-size:30px}
 .clinic p{opacity:.9;margin-top:6px}
-.offer{background:#f4845f;border-radius:var(--radius);padding:32px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;min-height:400px}
-.offer .gift{font-size:40px}
+.offer{background:#F5C84B;border-radius:var(--radius);padding:32px;color:#1F3A5F;display:flex;flex-direction:column;justify-content:space-between;min-height:400px}
+.offer .gift{font-size:40px;line-height:0}
 .offer h3{font-size:30px;margin-top:auto}
 .offer p{opacity:1;margin-top:10px}
 
@@ -243,8 +245,9 @@ footer.site{width:calc(100% - 28px);max-width:var(--maxw);margin:14px auto;backg
 /* Phone: shrink the home hero photo so both mom and daughter fit across the card; it sits at the bottom and the overlay goes solid at the photo top edge (stops account for body zoom:1.2) */
 @media(max-width:600px){
   .hero-card{background-size:280% auto !important;background-position:left 89% bottom calc(240px - .77*(100vw - 34px)) !important;background-repeat:no-repeat !important}
-  .hero-card{padding-bottom:260px}
-  .hero-card::before{background:linear-gradient(0deg,rgba(0,0,0,.4) 0,rgba(0,0,0,.35) calc(.397*100vw + 60px),rgba(0,0,0,.97) calc(.397*100vw + 227px))}
+  .hero-card{padding-bottom:330px}
+  .hero-card::before{background:linear-gradient(0deg,rgba(0,0,0,0) 0,rgba(0,0,0,.08) calc(.397*100vw + 60px),rgba(0,0,0,.55) calc(.397*100vw + 200px),rgba(0,0,0,.82) calc(.397*100vw + 300px))}
+  .hero .btn-primary{padding:9px 15px;font-size:12px;line-height:1.3}
 }
 
 /* Phone/tablet polish shared by every page (desktop untouched) */
@@ -339,7 +342,7 @@ footer.site{width:calc(100% - 28px);max-width:var(--maxw);margin:14px auto;backg
     <div class="cc"><h3>Meet Us Anywhere</h3><p>We are based in Orange County, CA and can meet in person for locals, but serve students nationwide via FaceTime, Zoom, or Teams.</p></div>
   </div>
   <div class="offer">
-    <div class="gift">&#128221;</div>
+    <div class="gift"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1F3A5F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M8 13h8M8 17h5"/></svg></div>
     <h3>Your first consult call is free of charge</h3>
     <p>We spend 15 minutes — coach, parent, and student together — to discuss goals and get started with a deadline map.</p>
   </div>
