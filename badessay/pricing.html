@@ -44,7 +44,7 @@ header.nav{position:sticky;top:0;z-index:50;background:rgba(59,206,227,.85);back
 nav.links{display:flex;gap:28px;font-weight:800;font-size:15px;color:#fff;white-space:nowrap}
 nav.links a:hover,nav.links a.current{color:#07363d}
 .nav-cta{display:flex;gap:12px;align-items:center;white-space:nowrap}
-.menu-btn{display:none;background:#fff;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;font-size:20px;cursor:pointer}
+.menu-btn{display:none;background:#fff;color:#000;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;font-size:20px;cursor:pointer}
 /* Nav colors tuned for the turquoise page background */
 .nav-cta .btn-primary{background:#fff;color:#3bcee3;border-color:#fff;
   box-shadow:0 1px 2px rgba(0,0,0,.18), inset 0 1px 1px rgba(255,255,255,.18)}
@@ -274,7 +274,7 @@ footer.site{width:calc(100% - 28px);max-width:var(--maxw);margin:14px auto;backg
 /* Pricing hero is the photo alone (its headline is part of the image). Phone/tablet: crop to the image's centered "Invest in Your Story" column,
    card sized to that crop (8:3 photo at 300% width = 8:9) so the photo fills it edge to edge */
 @media(max-width:900px){
-  .page-hero-card{min-height:0;aspect-ratio:8/9;background-size:300% auto !important;background-position:51% 0 !important;background-repeat:no-repeat !important}
+  .page-hero-card{min-height:0;aspect-ratio:2048/768;padding:0;background-size:cover !important;background-position:center !important;background-repeat:no-repeat !important}
 }
 /* Phone/tablet polish shared by every page (desktop untouched) */
 @media(max-width:900px){
@@ -377,6 +377,12 @@ footer.site{width:calc(100% - 28px);max-width:var(--maxw);margin:14px auto;backg
           <a href="contact.html" class="btn btn-primary">Book a Free Call <span class="arrow">&rarr;</span></a>
         </div>
       </div>
+    </div>
+
+    <div style="margin-top:40px;text-align:center;background:#f7f5fd;border:1px solid #e4defa;border-radius:16px;padding:32px 24px">
+      <h3 style="font-size:22px;letter-spacing:-.02em;margin-bottom:10px">HOW TO MAKE A PAYMENT</h3>
+      <p style="color:#4b5363;font-size:16px;margin-bottom:18px">We accept payment through Venmo or Zelle.</p>
+      <a href="mailto:hello@badessay.com" class="btn" style="background:#6f5cc6;color:#fff;border-color:#5a48b0;font-weight:800">CLICK HERE TO EMAIL US FOR DETAILS</a>
     </div>
 
   </div>
