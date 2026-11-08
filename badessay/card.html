@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cherry Mendoza — BadEssay</title>
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="description" content="Cherry Mendoza, BadEssay college essay coaching. Save my contact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Manrope",system-ui,sans-serif;background:#3bcee3;color:#0b0d0c;min-height:100vh;
+  display:flex;align-items:center;justify-content:center;padding:24px;-webkit-font-smoothing:antialiased}
+.card{background:#fff;border-radius:24px;box-shadow:0 10px 40px rgba(0,0,0,.15);max-width:420px;width:100%;
+  padding:40px 32px;text-align:center}
+.card img.logo{width:200px;max-width:80%;margin:0 auto 20px;display:block}
+h1{font-size:30px;letter-spacing:-.03em;line-height:1.1;margin-bottom:6px}
+.role{color:#4b5363;font-size:15px;font-weight:600;margin-bottom:4px}
+.brand{color:#0a94a6;font-size:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin-bottom:24px}
+.row{display:block;background:#f4fbfd;border:1px solid #e2f6f8;border-radius:14px;padding:14px 18px;margin-bottom:12px;
+  font-size:17px;font-weight:700;color:#0b0d0c;text-decoration:none}
+.row span{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6b7280;margin-bottom:2px}
+.save{display:block;width:100%;border:none;cursor:pointer;background:#F97316;color:#fff;font-family:inherit;
+  font-size:17px;font-weight:800;padding:16px;border-radius:999px;margin-top:20px}
+.save:active{background:#d96a0b}
+.foot{margin-top:18px;font-size:13px;color:#6b7280}
+</style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="BadEssay_Logo.png" alt="BadEssay">
+    <h1>Cherry Mendoza</h1>
+    <div class="role">Lead Writer &amp; Editorial Director</div>
+    <div class="brand">BadEssay &middot; College Essay Coaching</div>
+    <a class="row" href="tel:+17147675124"><span>Phone</span>714-767-5124</a>
+    <a class="row" href="mailto:hello@badessay.com"><span>Email</span>hello@badessay.com</a>
+    <a class="row" href="https://www.badessay.com"><span>Website</span>badessay.com</a>
+    <button class="save" onclick="saveContact()">Save Contact</button>
+    <div class="foot">Tap Save Contact to add Cherry to your phone.</div>
+  </div>
+<script>
+function saveContact(){
+  var v = "BEGIN:VCARD\r\nVERSION:3.0\r\nN:Mendoza;Cherry;;;\r\nFN:Cherry Mendoza\r\nORG:BadEssay\r\nTITLE:Lead Writer & Editorial Director\r\nTEL;TYPE=CELL,VOICE:+17147675124\r\nEMAIL;TYPE=INTERNET:hello@badessay.com\r\nURL:https://www.badessay.com\r\nEND:VCARD\r\n";
+  var blob = new Blob([v], {type:"text/vcard"});
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "Cherry-Mendoza-BadEssay.vcf";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+</script>
+</body>
+</html>
